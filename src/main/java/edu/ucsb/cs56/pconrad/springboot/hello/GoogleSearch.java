@@ -44,7 +44,7 @@ public class GoogleSearch{
 
 
     	    JsonArray array = json.getAsJsonArray("items");
-    	    for(int i = 0; i < array.size(); ++i) {
+    	    for(int i = 0; i < array.size(); i++) {
         		JsonObject jname = parser.parse(array.get(i).toString()).getAsJsonObject();
         		String name = jname.get("title").toString();
         		JsonObject jsnippet = parser.parse(array.get(i).toString()).getAsJsonObject();
@@ -57,7 +57,7 @@ public class GoogleSearch{
 
     	} catch(Exception e){
     	    e.printStackTrace(System.out);
-    	    System.exit(1);
+    	    System.out.println("Error getting Google results");
     	}
     	return null;
         }

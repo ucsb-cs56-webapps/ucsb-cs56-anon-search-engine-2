@@ -58,7 +58,7 @@ public class BingSearch{
 	        }
 	        catch (Exception e) {
 	            e.printStackTrace(System.out);
-	            System.exit(1);
+                System.out.println("Unsuccessful Bing search");
 	        }
         return null;
 	}
