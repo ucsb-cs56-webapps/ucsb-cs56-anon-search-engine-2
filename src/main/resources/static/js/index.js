@@ -43,7 +43,17 @@ function backToFrontPage() {
 function performSearch() {
     console.log("Performing Search:");
     const engine = getEngineType();
-    const query = document.getElementById('searchbar').value;
+    let query = "";
+
+    if ($(".body-container").css("display") != "none") {
+        $("#searchbar-result").val($("#searchbar").val());
+        query = document.getElementById('searchbar').value;
+    }
+
+    if ($(".result-container").css("display") != "none") {
+        $("#searchbar").val($("#searchbar-result").val());
+        query = document.getElementById('searchbar-result').value;
+    }
 
     // Used https://www.mkyong.com/spring-boot/spring-boot-ajax-example/ for reference
 
@@ -73,12 +83,6 @@ function performSearch() {
 
 const didSuccessfullyGetData = (data) => {
 
-    if ($(".body-container").css("display") != "none")
-        $("#searchbar-result").val($("#searchbar").val());
-
-    if ($(".result-container").css("display") != "none")
-        $("#searchbar").val($("#searchbar-result").val());
-
     $(".body-container").css("display", "none");
     $(".result-container").css("display", "block");
     $("#result-list").css("margin-left", $("#back-to-index").css("width"));
@@ -90,6 +94,8 @@ const didSuccessfullyGetData = (data) => {
         $("#duckduckgo-search-button-result").addClass("selected");
     }
     // format data appropriately.
+    console.log("emptying results container");
+
     $("#result-list").empty();
     for(let i = 0; i < data.length; i++) {
         data[i].title = data[i].title.replace(/["']/g, "");
@@ -105,6 +111,8 @@ const didSuccessfullyGetData = (data) => {
             data[i].subtitle +
             '</p></div>');
     }
+
+    console.log("appended data");
 
     console.log(data);
 }

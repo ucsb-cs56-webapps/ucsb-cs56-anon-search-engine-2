@@ -2,6 +2,7 @@ package edu.ucsb.cs56.pconrad.springboot.hello;
 
 import edu.ucsb.cs56.pconrad.springboot.hello.SearchQuery;
 import edu.ucsb.cs56.pconrad.springboot.hello.SearchResult;
+import edu.ucsb.cs56.pconrad.springboot.hello.DuckDuckGoSearchManager;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,11 +33,14 @@ public class SearchController{
 		// API's should return an ArrayList<SearchResult> Object.
 
 		if(query.getEngine().equals("Google")){
-			SearchResult resultsObject = new SearchResult("title", "subtitle","URL");
-			results.add(resultsObject);
-		}
-		else if(query.getEngine().equals("DuckDuckGo")){
-			//results = "Searched " + query.getUserEntry() + " with DuckDuckGo";
+			results = GoogleSearch.gSearch(query);
+		} else if(query.getEngine().equals("DuckDuckGo")) {
+			try {
+				results = DuckDuckGoSearchManager.search(query);
+			} catch (Exception e) {
+				System.out.println("DuckDuckGoSearchManager Error: " + e);
+			}
+
 		}
 		else if(query.getEngine().equals("Bing")){
 			String searchTerm = query.getUserEntry();
