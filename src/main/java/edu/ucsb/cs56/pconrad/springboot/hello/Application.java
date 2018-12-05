@@ -15,11 +15,19 @@ public class Application implements CommandLineRunner{
     @Autowired
     private Environment env;
 
+    public static String bingKey;
+    public static String googleApiKey;
+    public static String googleEngineId;
+
+
     @Override
     public void run(String... args) throws Exception {
-
-        System.out.println(env.getRequiredProperty("BingSubscriptionKey"));
-
+        bingKey = env.getRequiredProperty("BingSubscriptionKey");
+        googleApiKey = env.getRequiredProperty("GoogleApiKey");
+        googleEngineId = env.getRequiredProperty("GoogleEngineId");
+        System.out.println("THIS IS IN APPLICATION. " + bingKey);
+        System.out.println("THIS IS IN APPLICATION. " + googleApiKey);
+        System.out.println("THIS IS IN APPLICATION. " + googleEngineId);
     }
 
     public static void main(String[] args) {

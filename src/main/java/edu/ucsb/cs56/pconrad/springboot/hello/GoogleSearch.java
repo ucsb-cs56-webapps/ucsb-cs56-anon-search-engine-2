@@ -15,24 +15,12 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class GoogleSearch{
 
-    static String apiKey = "";
-    static String customSearchEngineKey = "";
+    static String apiKey = Application.googleApiKey;
+    static String customSearchEngineKey = Application.googleEngineId;
     static String searchURL = "https://www.googleapis.com/customsearch/v1?";
 
 
     public static ArrayList<SearchResult> gSearch(SearchQuery query) {
-
-    	String file="GoogleApiKey.txt";
-    	try{
-    	    BufferedReader reader = new BufferedReader(new FileReader(file));
-    	    apiKey=reader.readLine();
-    	    //got custom search engine key from https://developers.google.com/custom-search/v1/using_rest
-    	    customSearchEngineKey=reader.readLine();
-    	    reader.close();
-    	}
-    	catch (java.io.IOException e){
-    	    System.err.print("File is empty");
-    	}
 
     	String toSearch = searchURL + "key=" + apiKey + "&cx=" + customSearchEngineKey+"&q=";
 
