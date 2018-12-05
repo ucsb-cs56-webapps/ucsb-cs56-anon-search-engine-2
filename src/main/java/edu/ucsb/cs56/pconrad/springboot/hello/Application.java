@@ -22,9 +22,9 @@ public class Application implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        bingKey = env.getRequiredProperty("BingSubscriptionKey");
-        googleApiKey = env.getRequiredProperty("GoogleApiKey");
-        googleEngineId = env.getRequiredProperty("GoogleEngineId");
+        bingKey = env.getRequiredProperty("bingSubscriptionKey");
+        googleApiKey = env.getRequiredProperty("googleAPIKey");
+        googleEngineId = env.getRequiredProperty("googleSearchEngineID");
         System.out.println("THIS IS IN APPLICATION. " + bingKey);
         System.out.println("THIS IS IN APPLICATION. " + googleApiKey);
         System.out.println("THIS IS IN APPLICATION. " + googleEngineId);
