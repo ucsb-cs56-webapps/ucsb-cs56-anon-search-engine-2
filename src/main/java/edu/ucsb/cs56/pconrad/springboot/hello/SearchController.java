@@ -39,15 +39,14 @@ public class SearchController{
 			//results = "Searched " + query.getUserEntry() + " with DuckDuckGo";
 		}
 		else if(query.getEngine().equals("Bing")){
-			//results = "Searched " + query.getUserEntry() + " with Bing";
+			String searchTerm = query.getUserEntry();
+	   		try {
+				results = BingSearch.getResult(searchTerm);
+			} catch(Exception e) {
+				System.out.println("ISSSUUUUUEEE: " + e);
+			}
 		}
 
-		ArrayList<String> stringResults = new ArrayList<String>();
-
-		for(int i = 0; i < results.size(); i++) {
-			stringResults.add(results.get(i).toSplittableString());
-		}
-
-		return ResponseEntity.ok(stringResults);
+		return ResponseEntity.ok(results);
 	}
 }
