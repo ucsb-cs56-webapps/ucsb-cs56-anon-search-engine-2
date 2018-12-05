@@ -35,8 +35,9 @@ Go to https://developers.google.com/custom-search/v1/overview and under API key 
 To get a SearhEngine ID go to https://developers.google.com/custom-search/v1/overview
 Click on the "Custom Search Engine Control panel"
 Click on add to make a new serch engine and follow instructions.
+Enter "google.com" as the url.
+Click "Contorl Panel" to find your Search Engine ID.
 Click on the "tutorial" for more instruciton on how to customize the search engine
-You can click on the search engine and your Search Engine ID will be given
 
 DUCK DUCK GO: No extra work required
 
