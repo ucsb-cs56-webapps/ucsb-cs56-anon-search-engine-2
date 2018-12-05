@@ -5,3 +5,7 @@ target/
 *.css.map
 
 bingAPI_key.txt
+
+
+localhost.json
+heroku.json
