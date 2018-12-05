@@ -33,10 +33,8 @@ public class SearchController{
 		// API's should return an ArrayList<SearchResult> Object.
 
 		if(query.getEngine().equals("Google")){
-			SearchResult resultsObject = new SearchResult("title", "subtitle","URL");
-			results.add(resultsObject);
-		}
-		else if(query.getEngine().equals("DuckDuckGo")) {
+			results = GoogleSearch.gSearch(query);
+		} else if(query.getEngine().equals("DuckDuckGo")) {
 			try {
 				results = DuckDuckGoSearchManager.search(query);
 			} catch (Exception e) {
