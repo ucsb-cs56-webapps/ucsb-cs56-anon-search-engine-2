@@ -4,4 +4,8 @@
     "app_github_org":"ucsb-cs56-f18",
     "baseUrl":"https://CHANGE-TO-YOUR-APP-NAME.herokuapp.com",
     "salt":"FILL-WITH-RANDOM-CHARS"
+
+    "bingSubscriptionKey":"Enter the Bing subscription key here",
+    "googleAPIKey":"Enter the Google API",
+    "googleSearchEngineID":"Enter the Googe search engine ID"
 }
