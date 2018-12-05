@@ -1,5 +1,5 @@
 {
-    "bingSubscriptionKey":"Enter the Bing subscription key here",
-    "googleAPIKey":"Enter the Google API",
-    "googleSearchEngineID":"Enter the Googe search engine ID"
+    "BingSubscriptionKey":"replace this string with BING SUBSCRIPTION KEY",
+    "GoogleApiKey":"replace with GOOGLE API KEY",
+    "GoogleEngineId":"replace with GOOGLE ENGINE ID"
 }

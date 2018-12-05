@@ -6,28 +6,24 @@ import javax.net.ssl.HttpsURLConnection;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.stereotype.Controller;
 
 
- @RestController
+
+@Controller
 public class BingSearch{
+
+
 	public static ArrayList<SearchResult> getResult(String searchTerm) {
 
 		ArrayList<SearchResult> results = new ArrayList<SearchResult>();
 
-        String bingSubscriptionKey = "";
+		String bingSubscriptionKey = Application.bingKey;
         String binghost = "https://api.cognitive.microsoft.com";
         String bingpath = "/bing/v7.0/search";
-        String file = "bingAPI_key.txt";
 
 
-        try {
-	            BufferedReader reader = new BufferedReader(new FileReader(file));
-	            bingSubscriptionKey = reader.readLine();
-	            reader.close();
-	    } catch (java.io.IOException e) {
-	            System.err.print("Caught IOException");
-	    }
 
 	        // Confirm the subscriptionKey is valid.
 	        if (bingSubscriptionKey.length() != 32) {
