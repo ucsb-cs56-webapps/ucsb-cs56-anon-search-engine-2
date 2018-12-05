@@ -1,5 +1,5 @@
 {
-    "BingSubscriptionKey":"replace this string with BING SUBSCRIPTION KEY",
-    "GoogleApiKey":"replace with GOOGLE API KEY",
-    "GoogleEngineId":"replace with GOOGLE ENGINE ID"
+    "bingSubscriptionKey":"replace this string with BING SUBSCRIPTION KEY",
+    "googleAPIKey":"replace with GOOGLE API KEY",
+    "googleSearchEngineID":"replace with GOOGLE ENGINE ID"
 }
