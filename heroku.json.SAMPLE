@@ -1,0 +1,5 @@
+{
+    "bingSubscriptionKey":"replace this string with BING SUBSCRIPTION KEY",
+    "googleAPIKey":"replace with GOOGLE API KEY",
+    "googleSearchEngineID":"replace with GOOGLE ENGINE ID"
+}
